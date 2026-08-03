@@ -1,0 +1,18 @@
+# Render service manifest for Student Management System
+# After connecting this repo in Render, make sure to set MONGO_URI in the service's Environment settings.
+
+services:
+  - type: web
+    name: student-management-backend
+    env: node
+    plan: free
+    repo: https://github.com/Dhayalan04/Student-Management-System
+    branch: main
+    root: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: "5050"
+      - key: MONGO_URI
+        value: ""  # Set this in Render after import; use your MongoDB Atlas URI
