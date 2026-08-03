@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>🎓 Student Management System</h1>
+    <p>Add, view, update, and delete student records</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Form Section -->
+    <section class="card form-card">
+      <h2 id="form-title">Add New Student</h2>
+      <form id="student-form">
+        <input type="hidden" id="student-id" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required placeholder="e.g. Priya Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="rollNumber">Roll Number *</label>
+            <input type="text" id="rollNumber" required placeholder="e.g. CS2026-001" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" required placeholder="e.g. priya@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="course">Course *</label>
+            <input type="text" id="course" required placeholder="e.g. B.Tech CSE" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="10" max="100" placeholder="e.g. 20" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="e.g. 9876543210" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" rows="2" placeholder="Optional address"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Add Student</button>
+          <button type="button" id="cancel-btn" class="btn btn-secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+      <p id="form-message" class="message"></p>
+    </section>
+
+    <!-- Table Section -->
+    <section class="card table-card">
+      <div class="table-header">
+        <h2>Student Records</h2>
+        <input type="text" id="search-input" placeholder="🔍 Search by name, roll no, or course..." />
+      </div>
+
+      <div class="table-wrapper">
+        <table id="students-table">
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Age</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="students-tbody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+        <p id="empty-state" class="empty-state hidden">No students found. Add one above!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Full-Stack Student Management System — React/HTML + Node.js + Express + MongoDB</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
