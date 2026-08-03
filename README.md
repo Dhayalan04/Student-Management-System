@@ -33,45 +33,6 @@ CORS setup needed for local use.
 
 ---
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+ installed
-- MongoDB running locally, **or** a free [MongoDB Atlas](https://www.mongodb.com/atlas) cluster
-
----
-
-## Setup & Run
-
-### 1. Install dependencies
-```bash
-cd backend
-npm install
-```
-
-### 2. Configure environment variables
-```bash
-cp .env.example .env
-```
-Edit `.env` and set your `MONGO_URI` (local MongoDB or Atlas connection string).
-
-### 3. Start MongoDB (if running locally)
-```bash
-mongod
-```
-
-### 4. Start the server
-```bash
-npm start
-# or, for auto-reload during development:
-npm run dev
-```
-
-### 5. Open the app
-Visit **http://localhost:5000** in your browser. The frontend loads
-automatically and talks to the API at `/api/students`.
-
----
-
 ## REST API Reference
 
 | Method | Endpoint              | Description                          |
